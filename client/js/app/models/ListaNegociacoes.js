@@ -8,8 +8,9 @@ class ListaNegociacoes {
     }
     
     adiciona(negociacao) {
-        
+
         this._negociacoes.push(negociacao);
+        //this._negociacoes = [].concat(this._negociacoes, negociacao);
         //this._armadilha(this);
         //Reflect.apply(this._armadilha, this._contexto, [this]);
     }
