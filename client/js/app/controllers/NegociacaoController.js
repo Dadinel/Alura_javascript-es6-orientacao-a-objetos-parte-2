@@ -32,18 +32,18 @@ class NegociacaoController {
             model => { this._negociacoesView.update(model); }
          );*/
 
-        this._negociacoesView = new NegociacoesView($('#negociacoesView'));
+        //this._negociacoesView = new NegociacoesView($('#negociacoesView'));
 
         this._listaNegociacoes = new Bind(
             new ListaNegociacoes(),
-            this._negociacoesView,
-            ['adiciona','esvazia'] );
+            new NegociacoesView($('#negociacoesView')),
+            'adiciona','esvazia' );
 
         //this._negociacoesView.update(this._listaNegociacoes);
         
         //this._mensagem = new Mensagem();
 
-        this._mensagemView = new MensagemView($('#mensagemView'));
+        //this._mensagemView = new MensagemView($('#mensagemView'));
 
         /*this._mensagem = ProxyFactory.create(
             new Mensagem(),
@@ -53,8 +53,8 @@ class NegociacaoController {
 
         this._mensagem = new Bind(
             new Mensagem(),
-            this._mensagemView,
-            ['texto'] );
+            new MensagemView($('#mensagemView')),
+            'texto' );
 
         //this._mensagemView.update(this._mensagem);
     }
