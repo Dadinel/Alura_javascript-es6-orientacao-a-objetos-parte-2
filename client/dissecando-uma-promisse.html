@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dissecando uma promise</title>
+</head>
+<body>
+    <p id="promis" ></p>
+
+    <script>
+
+    let p = document.querySelector('#promis');
+    let ok = false;
+    let promise = new Promise((resolve, reject) => {
+
+        // como temos mais de uma instrução, precisamos colocar um bloco em nossa arrow function! Lembrou?
+        setTimeout(() => {
+            if(ok) {
+                resolve('PROMISE CONCLUÍDA');
+            } else {
+                reject('HOUVE PROBLEMAS');
+            }
+        }, 5000);
+    });
+
+    promise
+        .then(resultado => p.textContent = resultado)
+        .catch(erro => p.textContent = erro);
+</script>
+</body>
+</html>
